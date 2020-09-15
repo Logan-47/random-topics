@@ -1,0 +1,65 @@
+https://www.youtube.com/watch?v=cCOL7MC4Pl0&t=199s
+
+-------------- Event Loop -------------------
+
+=> The setTimeout(call, ms) method, when invoked, must run the following steps:
+	-> run the folloeing steps in parallel
+		1. wait ms milliseconds
+		2. Queue a task to run the following steps
+			1. invoke callback
+
+
+=> Task Queues:
+=> the render steps
+
+
+---- While loop: [render blocking] ------
+```
+	button.addEventListener('click', () => {
+		while(true);
+	})
+
+```
+
+----- setTimeout loop: [non render blocking] ------
+```
+	function loop(){
+		setTimeout(loop, 0);
+	}
+	
+	loop();
+```
+
+
+=> requestAimationFrame:
+	-> function callback(){
+		moveByOnePixel()
+		// only render when neccessary
+		requestAnimationFrame(callback)
+	}
+	callback();
+
+	-> setTimeout fill be faster
+
+=> Microtasks:
+	-> promies uses microtask
+	-> promise loop: render blocking
+
+
+button.addEventListener('click', () => {
+	Promise.resolve().then(() => cosole.log("Microtask 1"));
+	console.log('Listener 1');
+})
+
+button.addEventListener('click', () => {
+	Promise.resolve().then(() => console.log('Microtask 2'));
+	console.log('Listener 2');
+})
+
+if user clicks button:
+	js stack will become empty after Listener 1 so microtask will happed first
+	Listerner 1, Microtask1, Listener 2. Microtask 2
+
+if javascript is used to click button:
+	i.e button.click() : "script of button.click()" will be in js stack
+	Listener 1, Listerner 2, microtask 1, microtask 2
