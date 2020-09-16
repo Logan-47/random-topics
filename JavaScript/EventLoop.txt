@@ -8,28 +8,28 @@ https://www.youtube.com/watch?v=cCOL7MC4Pl0&t=199s
 		2. Queue a task to run the following steps
 			1. invoke callback
 
-
 => Task Queues:
 => the render steps
 
 
----- While loop: [render blocking] ------
-```
-	button.addEventListener('click', () => {
-		while(true);
-	})
+------------ While loop: [render blocking] ------
 
-```
+	```
+		button.addEventListener('click', () => {
+			while(true);
+		})
 
------ setTimeout loop: [non render blocking] ------
-```
-	function loop(){
-		setTimeout(loop, 0);
-	}
-	
-	loop();
-```
+	```
 
+------------- setTimeout loop: [non render blocking] ------
+
+	```
+		function loop(){
+			setTimeout(loop, 0);
+		}
+		
+		loop();
+	```
 
 => requestAimationFrame:
 	-> function callback(){
