@@ -1,0 +1,27 @@
+What is LINUX kernel ?
+=> Linux is not an operating System.
+    
+    -> An operating System is a System Software,    
+        - that manages Computer Hardware and software resources
+        - Provides common services for computer programs.
+        -> kernel is a part of an Operating System
+
+=> LINUX IS A FREE AND OPENSOURCE KERNEL
+    kernel: it is the first program loaded on startup
+        -> It Handles the rest of the start-up process
+        -> It Handles the input/output requests from other programs
+        -> manages CPU resource , memory reources and hardware pheripherals Keyboards, Monitors, printers.
+
+    -> Android Uses a modifies version of Linux Kernel
+
+=> Linux is monolithic kernel
+
+Monolitic Kernel: 
+    - Everything Happens in a single program in single memory space.
+
+Micorokernel: 
+    - kernel is in a small space.
+    - other like device drivers, network drives a running as a sepearate user level programs and kernel talks to them.
+
+https://www.youtube.com/watch?v=jowCUo_UGts
+=> LInux is clone of UNIX
