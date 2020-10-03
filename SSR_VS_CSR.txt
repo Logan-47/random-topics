@@ -1,0 +1,35 @@
+REACT CAN DO BOTH :)
+
+Client Side rendering
+---------------------
+-> Your Initial request loads the page, layout, CSS, Javascript.
+-> Some or all of the content isn't included.
+-> Instead, the JavaScript makes another request, get a response (likely in JSON), and generates the appropriate HTML (likely using a templating library, such as React)
+-> For subsequent updates to the page, the client-side rendering approach repeats the steps it used to get the initial content.
+
+Server Side rendering
+---------------------
+-> with server-side rendering, you initial request loads the page, layout, CSS, JavaScript and CONTENT.
+
+WHY is SSR Initial Render Faster ?
+
+-> CSR requires more Javascript to be downloaded, which is more Javascript to parse. it requires a 2nd HTTP request to load the content, and then more Javascript to generate the template. Even if the intital Javascript gets cached, it still needs to get parsed, and the 2nd request isn't going to happen until the document is loaded.
+
+-> SSR, your server's response to the browser is the HTML of your page that is ready to be rendered.
+
+
+SSR advantages over CSR
+------------------------
+-> The intial page load is Faster
+-> The blank page flicker that happens with CSR also doesn't really happen with SSR (most people mask this problem wit a loading image)
+-> Server-side rendering is great for SEO
+    - Your content is present before you get it, so search engines are able to index it and crawl it efficiently.
+-> Great for static sites
+-> Server side rendering works great with text-based sites.
+
+SSR Cons over CSR
+-------------------
+-> Possible bottlenecking with site that are very interactive
+-> throughput of your server is slightily less than CSR throughput
+    - throughput: the amount of material or items passing through a system or process.
+-> Non-rich side interaction.
